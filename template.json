@@ -12,14 +12,7 @@
             "type": "String"
         },
         "instantRpRetentionRangeInDays": {
-            "type": "Int",
-            "allowedValues": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
+            "type": "Int"
         },
         "policyName": {
             "type": "String"
