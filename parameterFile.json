@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vaultName": {
+      "value": ""
+    },
+    "vaultRG": {
+      "value": ""
+    },
+    "vaultSubID": {
+      "value": ""
+    },
+    "instantRpRetentionRangeInDays": {
+      "value": 2
+    },
+    "policyName": {
+      "value": "test"
+    },
+    "schedule": {
+      "value": {
+        "scheduleRunFrequency": "Daily",
+        "scheduleRunDays": null,
+        "scheduleRunTimes": [
+          "2020-04-21T15:00:00.000Z"
+        ],
+        "schedulePolicyType": "SimpleSchedulePolicy"
+      }
+    },
+    "retention": {
+      "value": {
+        "dailySchedule": {
+          "retentionTimes": [
+            "2020-04-21T15:00:00.000Z"
+          ],
+          "retentionDuration": {
+            "count": 180,
+            "durationType": "Days"
+          }
+        },
+        "weeklySchedule": null,
+        "monthlySchedule": null,
+        "yearlySchedule": null,
+        "retentionPolicyType": "LongTermRetentionPolicy"
+      }
+    },
+    "timeZone": {
+      "value": "UTC"
+    },
+    "instantRPDetails": {
+      "value": {}
+    }
+  }
+}
