@@ -13,9 +13,15 @@
     },
     "instantRpRetentionRangeInDays": {
       "value": 2
+          "allowedValues": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
     },
     "policyName": {
-      "value": "test"
+      "value": ""
     },
     "schedule": {
       "value": {
