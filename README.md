@@ -1,0 +1,1 @@
+# Azure_Backup_Policy_Daily_Only
