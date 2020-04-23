@@ -4,14 +4,6 @@
     "parameters": {
         "vaultName": {
             "type": "String"
-            
-        },
-        "vaultRG": {
-            "type": "String",
-            "value": "test"
-        },
-        "vaultSubID": {
-            "type": "String"
         },
         "instantRpRetentionRangeInDays": {
             "type": "Int"
@@ -20,16 +12,38 @@
             "type": "String"
         },
         "schedule": {
-            "type": "Object"
+            "type": "Object",
+            "defaultValue": {
+                "scheduleRunFrequency": "Daily",
+                "scheduleRunDays": null,
+                "scheduleRunTimes": [
+                    "2020-04-21T15:00:00.000Z"
+                ],
+                "schedulePolicyType": "SimpleSchedulePolicy"
+            }
         },
         "retention": {
-            "type": "Object"
+            "type": "Object",
+            "defaultValue": {
+"dailySchedule": {
+          "retentionTimes": [
+            "2020-04-21T15:00:00.000Z"
+          ],
+          "retentionDuration": {
+            "count": 180,
+            "durationType": "Days"
+          }
+        },
+        "weeklySchedule": null,
+        "monthlySchedule": null,
+        "yearlySchedule": null,
+        "retentionPolicyType": "LongTermRetentionPolicy"
+
+                
+            }
         },
         "timeZone": {
             "type": "String"
-        },
-        "instantRPDetails": {
-            "type": "Object"
         }
     },
     "resources": [
@@ -42,8 +56,7 @@
                 "schedulePolicy": "[parameters('schedule')]",
                 "retentionPolicy": "[parameters('retention')]",
                 "timeZone": "[parameters('timeZone')]",
-                "instantRpRetentionRangeInDays": "[parameters('instantRpRetentionRangeInDays')]",
-                "instantRPDetails": "[parameters('instantRPDetails')]"
+                "instantRpRetentionRangeInDays": "[parameters('instantRpRetentionRangeInDays')]"
             }
         }
     ]
